@@ -1,12 +1,15 @@
-void setup() {
-  size(400, 400);        // tamaño de la ventana
-  background(240);       // color de fondo
-}
+void setup() { 
+  size(400, 400); 
+  noStroke(); 
+} 
 
-void draw() {
-  fill(52, 152, 219);    // color de relleno
-  stroke(27, 79, 114);   // color de borde
-  strokeWeight(4);       // grosor del borde
-  
-  ellipse(width/2, height/2, 150, 150); // círculo en el centro
+void draw() { 
+  // colores que van cambiando con el tiempo
+  int r = (int)map(sin(frameCount * 0.02), -1, 1, 50, 255);
+  int g = (int)map(sin(frameCount * 0.04), -1, 1, 50, 255);
+  int b = (int)map(sin(frameCount * 0.06), -1, 1, 50, 255);
+
+  background(240);                // fondo gris claro
+  fill(r, g, b);                  // color dinámico
+  ellipse(width/2, height/2, 150, 150); // círculo
 }
